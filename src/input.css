@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.container
+{
+    @apply max-w-[100%] py-4 px-5 w-full mx-auto;
+}
+
+body
+{
+    @apply font-raleway
+}
+
+
+@layer components{
+    /* ---header--- */
+    .header{
+        @apply relative;
+    }
+    .header__top{
+        @apply md:flex md:justify-between border-b-[1px] border-dark pb-2;
+    }
+
+    .header__top img{
+        @apply w-[200px];
+    }
+    .header__top .header__right{
+        @apply hidden md:visible md:flex md:justify-between;
+    }
+    .header__top .header__right ul{
+        @apply md:flex md:gap-5 md:mt-6;
+    }
+    .header__contactd li i{
+        @apply md:mr-2
+    }
+    .header__buttonsd{
+        @apply md:mx-5 md:mt-6;
+    }
+    .header__buttonsd a{
+        @apply mx-2 mt-6 ;
+    }
+
+    .header__bottom .header__navd ul{
+        @apply hidden md:flex md:justify-around md:pt-4;
+    }
+    .header__bottom .header__navd ul li{
+        @apply md:border-r-[2px] md:border-gray-300 md:py-1 md:pr-16 md:text-center;
+    }
+    .header__bottom .header__navd ul li:last-child{
+        @apply md:border-0 md:bg-gold md:py-2 md:px-6 md:text-white rounded-md;
+    }
+
+    .header__action
+    {
+        @apply bg-light absolute top-[6.4rem] right-0 w-[0] h-[100vh] px-0 pt-0 overflow-hidden transition-all shadow-md md:static md:h-fit md:w-fit md:shadow-none;
+
+    }
+    .header__action.open
+    {
+        @apply w-[100%] px-10 pt-10 transition-all;
+    }
+    .header__action .header__navm
+    {
+        @apply flex flex-col text-center md:hidden;
+    }
+    .header__action .header__navm ul li
+    {
+        @apply pb-7
+    }
+    .header__action .header__contactm{
+        @apply md:hidden text-center;
+    }
+    .header__action .header__contactm li{
+        @apply pt-5;
+    }
+    .header__action .header__buttonsm{
+        @apply md:hidden text-center;
+    }
+    .header__navmobile{
+        @apply flex justify-between items-center;
+    }
+    .header__navmobile .burger__menu{
+        @apply md:hidden;
+    }
+
+    /* ---BURGER--- */
+    .burger__menu span
+    {
+        @apply w-[1.5rem] h-[.2rem] bg-dark block rounded-full transition-all;
+
+    }
+    .burger__menu span:nth-child(2)
+    {
+        @apply my-1
+    }
+    .burger__menu.open span:first-child
+    {
+        @apply transform translate-y-[5px] translate-x-[15px] rotate-[220deg] transition-all w-3
+    }
+
+    .burger__menu.open span:last-child
+    {
+        @apply transform translate-y-[-5px] translate-x-[15px] rotate-[-220deg] transition-all w-3
+    }
+}
+
+/* BANNER TITLE */
+.banner__wrapper h1{
+    @apply text-center text-4xl font-light pt-5 pb-10 md:text-8xl;
+}
+.content__wrapper .content__categories ul li{
+    @apply text-center pb-3 text-xl md:text-left;
+}
+
+/* CONTENT */
+.content__wrapper{
+    @apply md:flex justify-between;
+}
+.content__info{
+    @apply bg-lightgray p-[12px] my-[15px];
+}
+.content__info ul{
+    @apply max-h-[0rem] overflow-hidden transition-all;
+}
+.content__info ul.open{
+    @apply max-h-[50rem] pt-6 transition-all;
+}
+.content__info ul li{
+    @apply text-gray-600 pb-4 text-justify;
+}
+.content__info h4{
+    @apply flex items-center justify-between font-semibold hover:cursor-pointer;
+}
+.content__info h4 i{
+    @apply md:visible transition-all;
+}
+.content__info h4 i.open{
+    @apply transform rotate-180 transition-all;
+}
+.content__categories ul li.active{
+    @apply underline text-green;
+}
+.content__tab{
+    @apply relative min-h-[100px] md:min-h-[250px] md:w-[65rem];
+}
+.content__item{
+    @apply hidden opacity-0 transition-all top-7;
+}
+.content__item.active{
+    @apply block opacity-100 transition-all pt-0;
+}
+
+/* FOOTER */
+.footer{
+    @apply mt-[10%] relative bg-lightgray;
+}
+.footer__top{
+    @apply md:flex md:justify-between
+}
+.footer__top img{
+    @apply w-[200px] block m-auto pt-10 md:mx-0 md:mb-[6rem];
+}
+.footer__top .footer__buttons{
+    @apply flex flex-col
+}
+
+.footer__middleinfo{
+    @apply hidden md:visible md:flex gap-10;
+}
+.footer__middledetails h4{
+    @apply pb-3 font-semibold text-gray-400;
+}
+.footer__middledetails ul li{
+    @apply pb-3 font-extralight text-gray-400;
+}
+.footer__bottom{
+    @apply flex flex-col-reverse border-t-[2px] border-gray-500 pt-5 md:flex-row md:justify-between md:mb-2;
+}
+.footer__bottom .footer__follow{
+    @apply flex justify-center gap-5
+}
+.footer__bottom .footer__follow i{
+    @apply text-3xl opacity-50 mb-3
+}
+.footer__bottom p{
+    @apply text-center text-sm text-gray-500
+}
